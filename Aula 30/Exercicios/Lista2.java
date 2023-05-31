@@ -16,7 +16,7 @@ public class Lista2 {
         conjunto.add(8);
 
         System.out.println(conjunto);
-
+        System.out.println("------------------------");
     }
 }
 //Quando usamos um conjunto ele não permite elementos duplicados, e no exemplo acima, os elementos duplicados são 5 e 8, e eles foram removidos
