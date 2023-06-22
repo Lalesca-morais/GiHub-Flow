@@ -1,9 +1,11 @@
 public class Banco {
     private String nomeCliente;
     private double saldo;
-    public Banco(String nomeCliente, double saldoInicial) {
+    private double saldoCheque;
+    public Banco(String nomeCliente, double saldoInicial,double saldoCheque) {
         this.nomeCliente = nomeCliente;
         this.saldo = saldoInicial;
+        this.saldoCheque =saldoCheque;
     }
     public void sacar(double valor) {
         if (valor > 0 && valor <= saldo) {
@@ -19,6 +21,15 @@ public class Banco {
             System.out.println("Depósito de R$" + valor + " realizado com sucesso.");
         } else {
             System.out.println("Valor inválido para depósito.");
+        }
+    }
+    public void chequeEspecial(double valor) {
+        if (valor<=saldoCheque) {
+            saldoCheque -= valor;
+            System.out.println("Saque de R$" + valor + " realizado com sucesso.");
+            System.out.println("Saldo atual do cheque sepecial: "+saldoCheque);
+        } else {
+            System.out.println("Você atingiu o valor limite do seu cheque especial.");
         }
     }
     public void exibirSaldo() {
